@@ -43,7 +43,7 @@
    	</div>
     <div>
     	<label>manager_id</label> 
-    	<select name="manager_id">
+    	<select name="managerId">
     		<option value="">선택
     	<c:forEach items="${empList}" var="manager">
     	  	<option value="${manager.employee_id}">${manager.first_name}  ${manager.last_name}

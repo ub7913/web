@@ -19,7 +19,7 @@
 		<td>${emp.getHire_date()}</td>
 		<td>${emp.getDepartment_id()}</td>
 		<td>${emp.getJob_id()}</td>
-		<td>${emp.getManager_id}</td>
+		<td>${emp.getManager_id()}</td>
 	</tr>
 </c:forEach>
 </table>
