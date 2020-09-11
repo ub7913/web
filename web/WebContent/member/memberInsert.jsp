@@ -46,7 +46,7 @@ function inputCheck() {
 		  onsubmit="return inputCheck()">
 	<div>
 		<label>ID </label>
-		<input type="textfiled" name="id">
+		<input type="text" name="id">
 	</div>
 	<div>
 		<label>PW </label>
@@ -54,8 +54,8 @@ function inputCheck() {
 	</div>
 	<div>
 		<label>성별</label>
-		<input type="radio" name="gender" value="male" checked>남</input>
-		<input type="radio" name="gender" value="female">여</input>
+		<input type="radio" name="gender" value="male" checked>남
+		<input type="radio" name="gender" value="female">여
 	</div>
 	<div>
 		<label>직업</label>
@@ -86,7 +86,7 @@ function inputCheck() {
 		<button>등록</button>
 		<!-- <button type="button" name="submit" onclick="inputCheck()">등록</button> -->
 	</div>
-</form>
+	</form>
 </div>
 </body>
 </html>

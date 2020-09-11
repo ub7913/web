@@ -6,7 +6,7 @@ public class BoardVO {
 	private String subject;
 	private String contents;
 	private String lastpost;
-	private String view;
+	private String views;
 	private String filename;
 	public String getNo() {
 		return no;
@@ -38,11 +38,11 @@ public class BoardVO {
 	public void setLastpost(String lastpost) {
 		this.lastpost = lastpost;
 	}
-	public String getView() {
-		return view;
+	public String getViews() {
+		return views;
 	}
-	public void setView(String view) {
-		this.view = view;
+	public void setViews(String views) {
+		this.views = views;
 	}
 	public String getFilename() {
 		return filename;
@@ -54,7 +54,7 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		return "BoardVO [no=" + no + ", poster=" + poster + ", subject=" + subject + ", contents=" + contents
-				+ ", lastpost=" + lastpost + ", view=" + view + ", filename=" + filename + "]";
+				+ ", lastpost=" + lastpost + ", view=" + views + ", filename=" + filename + "]";
 	}
 	
 }

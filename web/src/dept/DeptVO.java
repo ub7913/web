@@ -5,6 +5,8 @@ public class DeptVO {
 	private String department_name;
 	private Integer manager_id;
 	private Integer location_id;
+	private Integer first;
+	private Integer last;
 	
 	public DeptVO() {//인수가 있는 생성자가 있으면 반드시 인수가 없는 생성자도 만들어 줄것
 		
@@ -49,6 +51,23 @@ public class DeptVO {
 	public void setLocation_id(Integer location_id) {
 		this.location_id = location_id;
 	}
+
+	public Integer getFirst() {
+		return first;
+	}
+
+	public void setFirst(Integer first) {
+		this.first = first;
+	}
+
+	public Integer getLast() {
+		return last;
+	}
+
+	public void setLast(Integer last) {
+		this.last = last;
+	}
+
 
 	@Override
 	public String toString() {

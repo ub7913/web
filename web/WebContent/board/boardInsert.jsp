@@ -26,14 +26,19 @@ function inputCheck() {
 <div class="regist">
 	<form method="post" name="frm" id="frm"
 		  action="boardInsert.do"
+		  enctype="multipart/form-data"
 		  onsubmit="return inputCheck()">
 		<div>
+			<label>번호</label>
+			<input type="text" name="no">
+		</div>
+		<div>
 			<label>작성자</label>
-			<input type="textfiled" name="poster">
+			<input type="text" name="poster">
 		</div>
 		<div>
 			<label>제목</label>
-			<input type="textFiled" name="subject">
+			<input type="text" name="subject">
 		</div>
 		<div>
 			<label for="contents">내용</label>
@@ -41,7 +46,7 @@ function inputCheck() {
 		</div>
 		<div>
 			<label>파일첨부</label>
-			<input type="file" name="files" size="30"></input>
+			<input type="file" name="filename" size="30"></input>
 		</div>
 		<div>
 			<button type="reset" name="reset">초기화</button>

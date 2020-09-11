@@ -19,7 +19,7 @@ public class BoardDAO {
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();//리턴값을 저장할 변수 저장
 		try {
 			conn = ConnectionManager.getConnnect();
-			String sql = "SELECT no, poster, subject, contents, lastpost, view, filename"
+			String sql = "SELECT no, poster, subject, contents, lastpost, views, filename"
 					+ " FROM board"
 					+ " ORDER BY no";
 			pstmt=conn.prepareStatement(sql);
@@ -31,7 +31,7 @@ public class BoardDAO {
 				resultVO.setSubject(rs.getString("subject"));
 				resultVO.setContents(rs.getString("contents"));
 				resultVO.setLastpost(rs.getString("lastpost"));
-				resultVO.setView(rs.getString("view"));
+				resultVO.setViews(rs.getString("views"));
 				resultVO.setFilename(rs.getString("filename"));
 				list.add(resultVO);
 			}
@@ -49,7 +49,7 @@ public class BoardDAO {
 		ResultSet rs = null;
 		try {
 			conn = ConnectionManager.getConnnect();
-			String sql = "SELECT no, poster, subject, contents, lastpost, view, filename"
+			String sql = "SELECT no, poster, subject, contents, lastpost, views, filename"
 					+ " FROM board"
 					+ " WHERE no=?";
 			pstmt=conn.prepareStatement(sql);
@@ -62,7 +62,7 @@ public class BoardDAO {
 				resultVO.setSubject(rs.getString("subject"));
 				resultVO.setContents(rs.getString("contents"));
 				resultVO.setLastpost(rs.getString("lastpost"));
-				resultVO.setView(rs.getString("view"));
+				resultVO.setViews(rs.getString("views"));
 				resultVO.setFilename(rs.getString("filename"));
 			} else {
 				System.out.println("no data");
@@ -127,12 +127,13 @@ public class BoardDAO {
 			
 			//게시글 등록
 			String sql="insert into board (no,poster,subject,contents,lastpost,filename) "
-					+ "values (?,?,?,?,sysdate)";//시퀀스 대신에 서브쿼리로 (select max(no)+1 from board)
+					+ "values (?,?,?,?,sysdate,?)";//시퀀스 대신에 서브쿼리로 (select max(no)+1 from board)
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, boardVO.getNo());
 			pstmt.setString(2, boardVO.getPoster());
 			pstmt.setString(3, boardVO.getSubject());
 			pstmt.setString(4, boardVO.getContents());
+			pstmt.setString(5, boardVO.getFilename());
 			int r = pstmt.executeUpdate();
 			System.out.println(r + " 건이 처리됨");
 			conn.commit();//작업이 완료되면 커밋 하기
