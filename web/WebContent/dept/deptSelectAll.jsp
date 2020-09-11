@@ -28,25 +28,29 @@
 	<button>검색</button>
 </form>
 <table border="1">
-<% 
+<c:forEach items="${list}" var="dept">
+	<%--
 	ArrayList<DeptVO> list = (ArrayList<DeptVO>)request.getAttribute("list");
 	for (DeptVO dept : list) { 
-%>
+	--%>
 	<tr>
-		<td><a href="deptSelect?department_id=<%=dept.getDepartment_id() %>"><%=dept.getDepartment_id() %></a></td>
-		<td><%=dept.getDepartment_name() %></td>
-		<td><%=dept.getLocation_id() %></td>
-		<td><%=dept.getManager_id() %></td>
+		<td><a href="deptSelect?department_id=${dept.getDepartment_id()}">${dept.getDepartment_id()}</a></td><!-- deptSelect?department_id= (deptSelect:서블릿주소,department_id=:파라미터 값) -->
+		<td>${dept.getDepartment_name()}</td>
+		<td>${dept.getLocation_id()}</td>
+		<td>${dept.getManager_id()}</td>
 	</tr>
-<% } %>
+<%-- } --%>
+</c:forEach>
 </table>
 
 <my:paging paging="${paging}" jsfunc="gopage"/>
+
 <script>
 	function gopage(p) {
 		searchFrm.p.value = p;
 		searchFrm.submit();
 		//location.href="deptSelectAll?p=" + p;
+
 	}
 </script>
 </body>

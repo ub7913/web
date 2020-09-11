@@ -24,7 +24,7 @@ public class DeptDAO {
 			if(deptVO.getDepartment_name() != null) {
 				where += " and department_name like '%' || ? || '%'";
 			}
-			String sql = "select a.*     from( select rownum rn, b.*     from("
+			String sql = "select a.*     from( select b.* , rownum rn    from("
 					+ "SELECT DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID mgr_id, LOCATION_ID"
 					+ " FROM HR.DEPARTMENTS"
 					+ where
