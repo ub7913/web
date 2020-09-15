@@ -13,7 +13,7 @@
 		  action="login">
 		<div>
 			<label>ID </label>
-			<input type="textfiled" name="id">
+			<input type="text" name="id">
 		</div>
 		<div>
 			<label>PW </label>

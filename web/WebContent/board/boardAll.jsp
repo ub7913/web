@@ -26,7 +26,7 @@
 		<tbody>
 		<c:forEach items="${list}" var="board">
 			<tr>
-				<td><a href="boardSelect.jsp">${board.getNo()}</td>
+				<td><a href="BoardSelectAllAjaxServ?no=${board.getNo()}">${board.getNo()}</td>
 				<td>${board.getPoster()}</a></td>
 				<td>${board.getSubject()}</td>
 				<td>${board.getContents()}</td>

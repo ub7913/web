@@ -8,10 +8,18 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import common.ConnectionManager;
+import member.MemberDAO;
 
 public class BoardDAO {
 	Connection conn;
 	PreparedStatement pstmt;
+	
+	static BoardDAO instance;
+	public static BoardDAO getInstance() {
+		if(instance == null)
+			instance = new BoardDAO();
+			return instance;
+	}
 	
 	public ArrayList<BoardVO> selectAll(BoardVO boardVO) {//List혹은 ArrayList쓰기
 		BoardVO resultVO = null;
@@ -89,6 +97,7 @@ public class BoardDAO {
 		} finally {
 			ConnectionManager.close(null, pstmt, conn);
 		}
+	
 	}
 	
 	public void update(BoardVO boardVO) {
@@ -119,7 +128,7 @@ public class BoardDAO {
 			ResultSet rs = stmt.executeQuery(seqSql);
 			rs.next();
 			int no = rs.getInt(1);
-			
+			boardVO.setNo(Integer.toString(no));
 			//보드 번호 업데이트
 			seqSql = "update seq set no = no + 1 where tablename = 'board'";
 			stmt = conn.createStatement();
