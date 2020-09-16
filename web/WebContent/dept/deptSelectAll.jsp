@@ -17,7 +17,7 @@
 	
 	.pagination .active {
 		border : 1px solid gray;
-		background-color : red;
+		background-color : gray;
 	}
 </style>
 </head>

@@ -21,7 +21,7 @@ public class DeptDAO {
 		try {
 			conn = ConnectionManager.getConnnect();
 			String where = " where 1=1 ";
-			if(deptVO.getDepartment_name() != null) {
+			if(deptVO.getDepartment_name() != null) { //검색을 위해서 존재
 				where += " and department_name like '%' || ? || '%'";
 			}
 			String sql = "select a.*     from( select b.* , rownum rn    from("
@@ -141,7 +141,7 @@ public class DeptDAO {
 		
 	}
 	
-	//전체 건수 
+		//전체 건수 
 		public int count(DeptVO deptVO) {
 			int cnt = 0;
 			try {
