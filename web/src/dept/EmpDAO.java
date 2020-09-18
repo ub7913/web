@@ -114,6 +114,7 @@ public class EmpDAO {
 		}
 		return r;
 	}
+	
 	//부서별 급여합계  부서번호,부서명,급여합계 List<Map>
 	public List<Map<String,Object>> selectDeptSal(){
 		List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();

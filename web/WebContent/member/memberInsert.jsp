@@ -37,6 +37,7 @@ function inputCheck() {
 	return true;
 }
 </script>
+
 </head>
 <body>
 <h3>회원등록</h3>
